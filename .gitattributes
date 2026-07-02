@@ -1,0 +1,11 @@
+# Нормалізація закінчень рядків: у репозиторії завжди LF.
+# Прибирає попередження "LF will be replaced by CRLF" на Windows.
+* text=auto eol=lf
+
+# Бінарні файли — не чіпати.
+*.png binary
+*.webp binary
+*.otf binary
+*.jpg binary
+*.jpeg binary
+*.ico binary

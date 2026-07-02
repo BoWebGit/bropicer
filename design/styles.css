@@ -431,7 +431,7 @@ html.cursor-none,html.cursor-none *{cursor:none!important}
    ============================================================================ */
 @media (orientation:portrait){
   /* фрейм на всю ширину, пляшка вертикально по центру */
-  .hero__frame{height:82vh;width:100%;margin-left:-50%}
+  .hero__frame{height:72vh;width:100%;margin-left:-50%; top: 13vh;}
   .hero__plate{top:3vh}
   /* обидва кластери слів — по центру, над і під пляшкою */
   .hero__cluster--top{top:5vh;left:50%;right:auto;transform:translateX(-50%);text-align:center}

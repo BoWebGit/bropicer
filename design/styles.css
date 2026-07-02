@@ -171,6 +171,8 @@ html.cursor-none,html.cursor-none *{cursor:none!important}
 .manifesto__pin{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;padding:6rem var(--pad);max-width:var(--wrap);margin:0 auto}
 .manifesto__idx{font-family:var(--mono);text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:var(--ink);opacity:.5;margin-bottom:2.4rem}
 .manifesto__lines{display:flex;flex-direction:column;gap:.1em}
+/* дві версії розподілу тексту: --wide (4 рядки, ландшафт) / --tall (6 рядків, портрет) */
+.manifesto__lines--tall{display:none}
 .mline{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.05em;line-height:1.1;
   font-size:clamp(2rem,6vw,4.3rem);color:var(--ink)}
 .mline b{color:var(--signal)}
@@ -441,6 +443,11 @@ html.cursor-none,html.cursor-none *{cursor:none!important}
   .hero__foot{flex-direction:column;align-items:center;gap:1rem;bottom:2.2rem}
   .hero__note{width:100%;text-align:center}
   .hero__scroll{margin:0 auto}
+
+  /* manifesto: 6-рядкова версія замість 4-рядкової */
+  .manifesto__lines--wide{display:none}
+  .manifesto__lines--tall{display:flex}
+  .manifesto__lines--tall .mline{font-size:clamp(1.35rem,5.8vw,2.7rem);line-height:1.14}
 }
 
 /* Короткі ЛАНДШАФТНІ телефони: десктопний hero не має бути затісним */

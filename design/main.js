@@ -110,8 +110,9 @@
       });
     }
 
-    // Manifesto — pinned scrollytelling
-    var mlines = gsap.utils.toArray(".mline");
+    // Manifesto — pinned scrollytelling.
+    // Є дві версії рядків (--wide 4 / --tall 6) — беремо лише видиму за поточної орієнтації.
+    var mlines = gsap.utils.toArray(".mline").filter(function (el) { return el.offsetParent !== null; });
     if (mlines.length) {
       gsap.set(mlines, { yPercent: 110, opacity: 0 });
       var mtl = gsap.timeline({

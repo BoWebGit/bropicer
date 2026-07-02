@@ -3,13 +3,21 @@
 > Живий журнал проєкту. Памʼять, що переживає окремі сесії. Найновіше — зверху.
 
 ## Поточний стан
+- **🌐 LIVE:** https://bropicer.vercel.app — Vercel, проєкт `2b-agency/bropicer`, статика з `design/` (root=`.`, без білду). Авто-деплой з `main`.
 - **Етап:** 02-design — **повний редизайн v2** за новим стандартом, очікує погодження.
 - **Наступний крок:** фідбек → (за потреби) якісний апгрейд фото через браузер → DoD → `03-development`.
 - **Блокери релізу:** назви/стилі/ABV/**ціни** 6 сортів — заглушки (TODO); **backend/оплата** не підключені (форма демо); фото — AI-чернетки M2 (готові промти в `resources/refs/image-prompts.md`); реальні контакти/соцмережі.
 
 ## Журнал
 
-### 2026-07-02 — деплой: перехід на Vercel (статика з design/)
+### 2026-07-02 — задеплоєно на Vercel ✅
+- **LIVE:** https://bropicer.vercel.app — деплой через `vercel deploy --prod` (CLI вже авторизований під `bobodnaruk-3514`). Проєкт створено як **`2b-agency/bropicer`** (команда 2b-agency).
+- Деплоїли з теки `design/` (`vercel link --project bropicer` → `.vercel/` локально, в git не йде). Output = `.`, білд-команди нема — чиста статика.
+- Перевірено на проді: меню «Cпробувати», hero-orientation, manifesto 6/7-рядків, карусель, стокові лого, кеш-хедери (`assets/*` immutable) — усе працює.
+- `.env.local` (VERCEL_OIDC_TOKEN) і `.vercel/` — у `design/.gitignore`, у репо не комітяться.
+- GitHub Pages лишається зламаним — тепер неактуальний; можна вимкнути (Settings → Pages → None) + прибрати кореневий redirect-`index.html`.
+
+### 2026-07-02 — рішення: перехід на Vercel (статика з design/)
 - **Рішення:** хостити на **Vercel** статику з теки `design/` (без Next/React — щоб не ризикувати vanilla GSAP/Lenis анімаціями). Обрано замість GitHub Pages, де деплой стабільно падав із «Timeout reached, aborting!».
 - Гілка: **`main`** (Next-проєкт не робимо; `development/` поки не задіяно).
 - Додано `design/vercel.json` — кеш-хедери для `assets/` (шрифти/зображення, 1 рік) і no-cache для `styles.css`/`main.js`.

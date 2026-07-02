@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bropicer. Крафтове пиво. Шість сортів, жодного зайвого.</title>
+  <meta name="description" content="Bropicer. Крафтова пивоварня: рівно шість сортів у чорній пляшці. Обери своє та замов онлайн." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- ===== PRELOADER / INTRO (= age-gate 18+) ===== -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+    <div class="intro__count"><span id="intro-num">00</span></div>
+    <div class="intro__center">
+      <h1 class="intro__brand" id="intro-title">BROPICER</h1>
+      <div class="intro__gate" id="intro-gate" hidden>
+        <p class="intro__ask">Тобі вже є 18?</p>
+        <div class="intro__actions">
+          <button class="link-btn" id="age-yes" type="button" data-magnetic>Так, заходь</button>
+          <a class="link-btn link-btn--muted" id="age-no" href="https://www.google.com">Ні</a>
+        </div>
+        <p class="intro__law">Вживай відповідально. Надмірне споживання шкідливе.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-magnetic>BROPICER</a>
+    <button class="burger" id="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="menu" data-magnetic>
+      <span class="burger__label" id="burger-label">Меню</span>
+      <span class="burger__box" aria-hidden="true">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </span>
+    </button>
+  </header>
+
+  <!-- ===== FULLSCREEN MENU (curtain overlay) ===== -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__bg" aria-hidden="true"></div>
+    <nav class="menu__inner" aria-label="Повна навігація">
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a href="#reel" class="menu__link" data-magnetic>
+            <span class="menu__idx">01</span>
+            <span class="menu__roll">
+              <span class="menu__text">Сорти</span>
+              <span class="menu__text menu__text--alt" aria-hidden="true">Сорти</span>
+            </span>
+            <span class="menu__go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#craft" class="menu__link" data-magnetic>
+            <span class="menu__idx">02</span>
+            <span class="menu__roll">
+              <span class="menu__text">Крафт</span>
+              <span class="menu__text menu__text--alt" aria-hidden="true">Крафт</span>
+            </span>
+            <span class="menu__go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#stockists" class="menu__link" data-magnetic>
+            <span class="menu__idx">03</span>
+            <span class="menu__roll">
+              <span class="menu__text">Де скуштувати</span>
+              <span class="menu__text menu__text--alt" aria-hidden="true">Де скуштувати</span>
+            </span>
+            <span class="menu__go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="menu__item">
+          <a href="#order" class="menu__link" data-magnetic>
+            <span class="menu__idx">04</span>
+            <span class="menu__roll">
+              <span class="menu__text">Партнерам</span>
+              <span class="menu__text menu__text--alt" aria-hidden="true">Партнерам</span>
+            </span>
+            <span class="menu__go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+      <div class="menu__foot">
+        <span class="menu__meta">Bropicer — шість сортів, жодного зайвого</span>
+        <span class="menu__meta menu__meta--sig">18+ · пий відповідально</span>
+      </div>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- ===== HERO — гігантський kinetic-тип по центру ===== -->
+    <section class="hero" id="hero">
+      <h1 class="sr-only">Bropicer. Шість сортів крафтового пива, жодного зайвого.</h1>
+      <div class="hero__frame" id="hero-frame">
+        <img class="hero__plate" id="hero-bg" src="assets/hero-backdrop.png" alt="" aria-hidden="true" />
+        <div class="hero__cluster hero__cluster--top">
+          <span class="hero__eyebrow">Крафтова пивоварня</span>
+          <span class="hero__word hero__word--top split" data-split aria-hidden="true">Шість</span>
+        </div>
+        <img class="hero__plate hero__bottle" id="hero-bottle" src="assets/bottle-svitanok.png" alt="Чорна пляшка крафтового пива Bropicer з білою етикеткою SVITANOK" fetchpriority="high" />
+        <div class="hero__cluster hero__cluster--bot" id="cluster-bot">
+          <span class="hero__word hero__word--bot split" data-split aria-hidden="true">сортів</span>
+          <span class="hero__sub split" data-split>жодного зайвого</span>
+        </div>
+      </div>
+      <div class="hero__foot">
+        <p class="hero__note">Чорна пляшка. Біла кришка. Чистий смак.</p>
+        <a href="#reel" class="hero__scroll" data-magnetic>Дивитись лінійку</a>
+      </div>
+    </section>
+
+    <!-- ===== KINETIC MARQUEE ===== -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee-track">
+        <span>ШІСТЬ СОРТІВ</span><i>◦</i><span>ЖОДНОГО ЗАЙВОГО</span><i>◦</i><span>ЧОРНА ПЛЯШКА</span><i>◦</i>
+        <span>ШІСТЬ СОРТІВ</span><i>◦</i><span>ЖОДНОГО ЗАЙВОГО</span><i>◦</i><span>ЧОРНА ПЛЯШКА</span><i>◦</i>
+      </div>
+    </section>
+
+    <!-- ===== MANIFESTO — pinned scrollytelling (інверсія: світла панель) ===== -->
+    <section class="manifesto" id="manifesto">
+      <div class="manifesto__pin" id="manifesto-pin">
+        <p class="manifesto__idx">Чому так мало</p>
+        <div class="manifesto__lines">
+          <span class="mline">Бо вибір із двадцяти кранів</span>
+          <span class="mline">це ще не свобода, а шум.</span>
+          <span class="mline">Тому ми зварили <b>шість</b></span>
+          <span class="mline">з унікальним смаком</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6 СОРТІВ — горизонтальний пан (pinned) ===== -->
+    <section class="reel" id="reel">
+      <div class="reel__head">
+        <h3 class="reel__title">Лінійка</h3>
+        <p class="reel__note">Шість характерів. Білі етикетки, щоб смак говорив сам.
+          <!-- TODO: підтвердити назви/стилі/ABV/ціни з клієнтом (блокер релізу) --></p>
+      </div>
+      <div class="reel__viewport" id="reel-viewport">
+        <div class="reel__track" id="reel-track">
+          <article class="panel" data-sort="01">
+            <img class="panel__bottle" src="assets/bottle-svitanok.png" alt="Пляшка сорту Світанок" loading="lazy" />
+            <span class="panel__idx">01</span>
+            <div class="panel__main">
+              <h4 class="panel__name">Світанок</h4>
+              <p class="panel__meta">APA · цитрус, легка гіркота</p>
+            </div>
+            <dl class="panel__spec">
+              <div><dt>ABV</dt><dd>5.2%</dd></div>
+              <div><dt>обсяг</dt><dd>0.33 л</dd></div>
+              <div><dt>ціна</dt><dd class="tbd">150 грн</dd></div>
+            </dl>
+            <button class="add" type="button" data-name="01 · Світанок" data-magnetic>Додати в замовлення</button>
+          </article>
+          <article class="panel" data-sort="02">
+            <img class="panel__bottle" src="assets/bottle-hmil.png" alt="Пляшка сорту Хміль" loading="lazy" />
+            <span class="panel__idx">02</span>
+            <div class="panel__main">
+              <h4 class="panel__name">Хміль</h4>
+              <p class="panel__meta">IPA · соковитий, тропічний</p>
+            </div>
+            <dl class="panel__spec">
+              <div><dt>ABV</dt><dd>6.5%</dd></div>
+              <div><dt>обсяг</dt><dd>0.33 л</dd></div>
+              <div><dt>ціна</dt><dd class="tbd">150 грн</dd></div>
+            </dl>
+            <button class="add" type="button" data-name="02 · Хміль" data-magnetic>Додати в замовлення</button>
+          </article>
+          <article class="panel" data-sort="03">
+            <img class="panel__bottle" src="assets/bottle-opivnich.png" alt="Пляшка сорту Опівніч" loading="lazy" />
+            <span class="panel__idx">03</span>
+            <div class="panel__main">
+              <h4 class="panel__name">Опівніч</h4>
+              <p class="panel__meta">Dry Stout · кава, чорний шоколад</p>
+            </div>
+            <dl class="panel__spec">
+              <div><dt>ABV</dt><dd>7.0%</dd></div>
+              <div><dt>обсяг</dt><dd>0.33 л</dd></div>
+              <div><dt>ціна</dt><dd class="tbd">150 грн</dd></div>
+            </dl>
+            <button class="add" type="button" data-name="03 · Опівніч" data-magnetic>Додати в замовлення</button>
+          </article>
+          <article class="panel" data-sort="04">
+            <img class="panel__bottle" src="assets/bottle-tuman.png" alt="Пляшка сорту Туман" loading="lazy" />
+            <span class="panel__idx">04</span>
+            <div class="panel__main">
+              <h4 class="panel__name">Туман</h4>
+              <p class="panel__meta">Witbier · пшениця, цедра, коріандр</p>
+            </div>
+            <dl class="panel__spec">
+              <div><dt>ABV</dt><dd>4.8%</dd></div>
+              <div><dt>обсяг</dt><dd>0.33 л</dd></div>
+              <div><dt>ціна</dt><dd class="tbd">150 грн</dd></div>
+            </dl>
+            <button class="add" type="button" data-name="04 · Туман" data-magnetic>Додати в замовлення</button>
+          </article>
+          <article class="panel" data-sort="05">
+            <img class="panel__bottle" src="assets/bottle-vugilja.png" alt="Пляшка сорту Вугілля" loading="lazy" />
+            <span class="panel__idx">05</span>
+            <div class="panel__main">
+              <h4 class="panel__name">Вугілля</h4>
+              <p class="panel__meta">Baltic Porter · карамель, сухофрукти</p>
+            </div>
+            <dl class="panel__spec">
+              <div><dt>ABV</dt><dd>6.0%</dd></div>
+              <div><dt>обсяг</dt><dd>0.33 л</dd></div>
+              <div><dt>ціна</dt><dd class="tbd">150 грн</dd></div>
+            </dl>
+            <button class="add" type="button" data-name="05 · Вугілля" data-magnetic>Додати в замовлення</button>
+          </article>
+          <article class="panel" data-sort="06">
+            <img class="panel__bottle" src="assets/bottle-chiste.png" alt="Пляшка сорту Чисте" loading="lazy" />
+            <span class="panel__idx">06</span>
+            <div class="panel__main">
+              <h4 class="panel__name">Чисте</h4>
+              <p class="panel__meta">Helles Lager · хлібний, сухий фініш</p>
+            </div>
+            <dl class="panel__spec">
+              <div><dt>ABV</dt><dd>4.5%</dd></div>
+              <div><dt>обсяг</dt><dd>0.33 л</dd></div>
+              <div><dt>ціна</dt><dd class="tbd">150 грн</dd></div>
+            </dl>
+            <button class="add" type="button" data-name="06 · Чистий" data-magnetic>Додати в замовлення</button>
+          </article>
+        </div>
+      </div>
+      <!-- Mobile/tablet carousel controls (desktop uses pinned horizontal pan) -->
+      <div class="reel__nav" aria-label="Навігація лінійкою">
+        <button class="reel__arrow" type="button" data-dir="-1" aria-label="Попередній сорт">←</button>
+        <div class="reel__dots" id="reel-dots" role="tablist"></div>
+        <button class="reel__arrow" type="button" data-dir="1" aria-label="Наступний сорт">→</button>
+      </div>
+    </section>
+
+    <!-- ===== POUR MOMENT — pinned image + scrub копірайт ===== -->
+    <section class="pour" id="pour">
+      <img class="pour__img" src="assets/pour.png" alt="Налив темного крафтового пива" loading="lazy" />
+      <div class="pour__copy">
+        <p class="pour__big" data-reveal>Смак,<br/>за який не<br/> соромно</p>
+      </div>
+    </section>
+
+    <!-- ===== STOCKISTS — де скуштувати (логотипи партнерів) ===== -->
+    <section class="stk" id="stockists">
+      <div class="stk__head">
+        <h3 class="stk__title" data-split-lines>Де скуштувати</h3>
+        <p class="stk__lead">Бари, паби й магазини, де вже наливають і продають Bropicer.
+          <!-- TODO: замінити на реальних партнерів та їхні логотипи --></p>
+      </div>
+      <div class="stk__wrap">
+        <div class="stk__grid">
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/brovarium.svg" alt="" loading="lazy" /></span><span class="stk__name">Броваріум</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/hmil-pub.svg" alt="" loading="lazy" /></span><span class="stk__name">Хміль Паб</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/bochka.svg" alt="" loading="lazy" /></span><span class="stk__name">Бочка</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/pinta.svg" alt="" loading="lazy" /></span><span class="stk__name">Пінта</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/craft-station.svg" alt="" loading="lazy" /></span><span class="stk__name">Крафт Стейшн</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/solod.svg" alt="" loading="lazy" /></span><span class="stk__name">Солод</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/tap-room.svg" alt="" loading="lazy" /></span><span class="stk__name">Тап Рум</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/kuhol.svg" alt="" loading="lazy" /></span><span class="stk__name">Кухоль</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/pyvna-hvylia.svg" alt="" loading="lazy" /></span><span class="stk__name">Пивна Хвиля</span></div>
+          <div class="stk__item" data-reveal><span class="stk__mark"><img class="stk__logo" src="assets/stockists/14-kraniv.svg" alt="" loading="lazy" /></span><span class="stk__name">14 Кранів</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CRAFT — broken editorial + full-bleed parallax ===== -->
+    <section class="craft" id="craft">
+      <div class="craft__media"><img id="craft-img" src="assets/process.png" alt="Цех крафтової пивоварні Bropicer" loading="lazy" /></div>
+      <h3 class="craft__title" data-split-lines>Як ми це робимо</h3>
+      <ol class="craft__list">
+        <li data-reveal><span class="craft__n">01</span><h4>Мала партія</h4><p>Варимо невеликими циклами. Те, що не дотягує до смаку, не їде до пляшки.</p></li>
+        <li data-reveal><span class="craft__n">02</span><h4>Чорне скло</h4><p>Темна пляшка захищає пиво від світла, тож смак доходить таким, яким задуманий.</p></li>
+        <li data-reveal><span class="craft__n">03</span><h4>Без зайвого</h4><p>Жодних ароматизаторів напоказ. Зерно, вода, хміль, дріжджі і час.</p></li>
+      </ol>
+    </section>
+
+    <!-- ===== DISTRIBUTOR — cinematic partner CTA ===== -->
+    <section class="dist" id="order">
+      <div class="dist__glow" aria-hidden="true"></div>
+      <img class="dist__cap" id="dist-cap" src="assets/cap.png" alt="Кришка Bropicer з логотипом-хмелем" loading="lazy" />
+      <div class="dist__inner">
+        <p class="dist__eyebrow">Партнерство · Bropicer × HoReCa</p>
+        <h3 class="dist__title" data-split-lines>Постав нас<br/>на полицю</h3>
+        <p class="dist__lead">Бари, ресторани й магазини, що цінують крафт, беруть Bropicer до себе. Шість готових сортів, стабільні поставки, підтримка бренду.</p>
+        <ol class="dist__perks">
+          <li data-reveal><span class="dist__n">01</span><h4>Стабільні поставки</h4><p>Регулярно й вчасно, без зривів графіка.</p></li>
+          <li data-reveal><span class="dist__n">02</span><h4>Підтримка бренду</h4><p>Викладка, матеріали, спільне промо.</p></li>
+          <li data-reveal><span class="dist__n">03</span><h4>Уся лінійка</h4><p>Шість сортів одразу на твоїй полиці.</p></li>
+        </ol>
+        <div class="dist__foot">
+          <a class="dist__cta" href="mailto:hello@bropicer.example?subject=Дистрибуція%20Bropicer" data-magnetic>Стати партнером</a>
+          <p class="dist__note">Відповідаємо протягом дня. <!-- TODO: реальна пошта й умови партнерства --></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq" id="faq">
+      <h3 class="faq__title">Доставка та питання</h3>
+      <div class="acc" id="acc">
+        <div class="acc__item">
+          <button class="acc__q" type="button" aria-expanded="false">Куди ви доставляєте?<span class="acc__ic" aria-hidden="true"></span></button>
+          <div class="acc__a"><p>По всій Україні: поштовими службами та курʼєром у великих містах.
+            <!-- TODO: уточнити регіони/служби --></p></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__q" type="button" aria-expanded="false">Яке мінімальне замовлення?<span class="acc__ic" aria-hidden="true"></span></button>
+          <div class="acc__a"><p>Від 6 пляшок, рівно стільки, скільки в нас сортів.
+            <!-- TODO: підтвердити умови --></p></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__q" type="button" aria-expanded="false">Чи можна зібрати власний сет?<span class="acc__ic" aria-hidden="true"></span></button>
+          <div class="acc__a"><p>Так. Збери будь-яку комбінацію з шести сортів у кошику.</p></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__q" type="button" aria-expanded="false">Як оплатити?<span class="acc__ic" aria-hidden="true"></span></button>
+          <div class="acc__a"><p>Карткою онлайн або при отриманні.
+            <!-- TODO: підключити платіжний шлюз --></p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="foot">
+    <h2 class="foot__brand" data-split-lines>BROPICER</h2>
+    <div class="foot__grid">
+      <p class="foot__tag">Шість сортів.<br> Жодного зайвого.</p>
+      <nav class="foot__col" aria-label="Навігація у футері">
+        <a href="#reel" data-magnetic>Сорти</a>
+        <a href="#craft" data-magnetic>Крафт</a>
+        <a href="#order" data-magnetic>Замовити</a>
+      </nav>
+      <div class="foot__col">
+        <a href="#" data-magnetic>Instagram</a>
+        <a href="#" data-magnetic>Telegram</a>
+        <a href="mailto:hello@bropicer.example" data-magnetic>hello@bropicer.example</a>
+        <!-- TODO: реальні контакти й соцмережі -->
+      </div>
+    </div>
+    <div class="foot__bar">
+      <span>© 2026 Bropicer</span>
+      <span class="foot__law">18+ Вживай відповідально. Надмірне споживання алкоголю шкідливе для здоровʼя.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

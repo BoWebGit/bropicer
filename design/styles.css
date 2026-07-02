@@ -447,7 +447,7 @@ html.cursor-none,html.cursor-none *{cursor:none!important}
   /* manifesto: 6-рядкова версія замість 4-рядкової */
   .manifesto__lines--wide{display:none}
   .manifesto__lines--tall{display:flex}
-  .manifesto__lines--tall .mline{font-size:clamp(1.6rem,6.8vw,3.1rem);line-height:1.12}
+  .manifesto__lines--tall .mline{font-size:clamp(1.6rem,7.35vw,3.1rem);line-height:1.12}
 }
 
 /* Короткі ЛАНДШАФТНІ телефони: десктопний hero не має бути затісним */

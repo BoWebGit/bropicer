@@ -10,6 +10,10 @@
 
 ## Журнал
 
+### 2026-07-07 — favicon (біла кришка) ✅
+- Додано `design/favicon.svg` (+ копія в корені) — топ-в'ю **крон-кришки**: біла фльорована кришка (`--paper`) на чорному тлі (`--void`, rounded rect), приглушений амбер-сигнал (`--signal #C6923E`) у центрі. 21 зубець — стандартна крон-пробка. Прямий бренд-код: чорна пляшка → біла кришка.
+- Підключено `<link rel="icon" type="image/svg+xml">` у `design/index.html` (+ `theme-color #060606`) і в кореневому redirect-`index.html`.
+
 ### 2026-07-02 — задеплоєно на Vercel ✅
 - **LIVE:** https://bropicer.vercel.app — деплой через `vercel deploy --prod` (CLI вже авторизований під `bobodnaruk-3514`). Проєкт створено як **`2b-agency/bropicer`** (команда 2b-agency).
 - Деплоїли з теки `design/` (`vercel link --project bropicer` → `.vercel/` локально, в git не йде). Output = `.`, білд-команди нема — чиста статика.

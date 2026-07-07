@@ -132,7 +132,7 @@ html.cursor-none,html.cursor-none *{cursor:none!important}
 /* фрейм = розмір самого фото (центрований висотою, без transform), щоб текст тримався біля картинки */
 .hero__frame{position:absolute;top:4vh;height:92vh;left:50%;margin-left:-33.2vh;width:66.4vh;
   z-index:1;overflow:visible;will-change:transform}
-.hero__plate{position:absolute;inset:0;width:100%;height:90%;object-fit:contain;
+.hero__plate{position:absolute;inset:0;width:100%;height:96%;object-fit:contain;transform: rotate(12deg);
   filter:grayscale(1) contrast(1.05)}
 #hero-bg{display:none}
 .hero__bottle{z-index:2}
@@ -142,7 +142,7 @@ html.cursor-none,html.cursor-none *{cursor:none!important}
 /* кластери: прив'язані до країв фото, слова виходять за фото назовні */
 .hero__cluster{position:absolute;will-change:transform}
 .hero__cluster--top{top:8vh;right:45%;z-index:1;}
-.hero__cluster--bot{bottom:7vh;left:50%;z-index:3;text-align:left}
+.hero__cluster--bot{bottom:7vh;left:39%;z-index:3;text-align:left}
 .hero__eyebrow{display:block;font-family:var(--mono);text-transform:uppercase;letter-spacing:.24em;
   font-size:clamp(.62rem,1vw,.8rem);color:var(--muted);margin-bottom:.9rem;white-space:nowrap}
 /* розмір у vh → пропорційний висоті фото; без overflow (не ріже) і без тіні */
